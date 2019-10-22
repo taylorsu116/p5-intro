@@ -1,5 +1,3 @@
-// A wind diraction vector
-
 var wind;
 var position;
 var place;
@@ -91,6 +89,3 @@ if(position.y < 0) position.y = height;
 
 
 }
-
-
-
