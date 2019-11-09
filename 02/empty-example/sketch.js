@@ -22,23 +22,24 @@ function setup(){
 
 function askWeather(){
     //Get data from weatherstack.com
-//var url = "http://api.weatherstack.com/current?access_key=b30e6c71d82be5920a041820b9093320&query=New%20York";
+// var url = "http://api.weatherstack.com/current?access_key=b30e6c71d82be5920a041820b9093320&query=New%20York";
 
-var api = 'http://api.weatherstack.com/current?access_key=68c02b239398fdc50ae5b945187128cb&query=';
+var api = 'http://api.weatherstack.com/current?access_key=b30e6c71d82be5920a041820b9093320&query=';
 //var city = 'London';
 var url = api + input.value();
 
-loadJSON(url,gotWeather);
+loadJSON(url,gotData);
 }
 
 
-function gotWeather(weather){
+function gotData(data){
+    weather=data;
     var angle = radians(Number(weather.current.wind_degree));
     var windmag = Number(weather.current.wind_speed);
-
+    console.log('angle')
     cloudcover = Number(weather.current.cloudcover);
 
-
+    
     wind = p5.Vector.fromAngle(angle);
 
 }
